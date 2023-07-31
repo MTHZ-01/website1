@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/website1/static/css/main.6d77aa62.css",
+    "main.js": "/website1/static/js/main.5a0e3a19.js",
+    "static/js/787.c5ca0df0.chunk.js": "/website1/static/js/787.c5ca0df0.chunk.js",
+    "static/media/@Wallpaper_4K3D (13160.JPG": "/website1/static/media/@Wallpaper_4K3D (13160.cf1df1f1e9ce66bad1f7.JPG",
+    "static/media/fa-solid-900.ttf": "/website1/static/media/fa-solid-900.4a2cd718d7031b732e76.ttf",
+    "static/media/Raleway-VariableFont_wght.ttf": "/website1/static/media/Raleway-VariableFont_wght.575ec9e676c7a85494bb.ttf",
+    "static/media/fa-brands-400.ttf": "/website1/static/media/fa-brands-400.150de8eaa454d669c405.ttf",
+    "static/media/fa-solid-900.woff2": "/website1/static/media/fa-solid-900.bb975c966c37455a1bc3.woff2",
+    "static/media/fa-brands-400.woff2": "/website1/static/media/fa-brands-400.e033a13ee751afc1860c.woff2",
+    "static/media/fa-regular-400.ttf": "/website1/static/media/fa-regular-400.d87474231f4192884802.ttf",
+    "static/media/fa-regular-400.woff2": "/website1/static/media/fa-regular-400.3223dc79c1adee56370b.woff2",
+    "static/media/fa-v4compatibility.ttf": "/website1/static/media/fa-v4compatibility.0e3a648be390bd8cb094.ttf",
+    "static/media/fa-v4compatibility.woff2": "/website1/static/media/fa-v4compatibility.68577e40f3e70067b5da.woff2",
+    "static/media/logo.svg": "/website1/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/website1/index.html",
+    "main.6d77aa62.css.map": "/website1/static/css/main.6d77aa62.css.map",
+    "main.5a0e3a19.js.map": "/website1/static/js/main.5a0e3a19.js.map",
+    "787.c5ca0df0.chunk.js.map": "/website1/static/js/787.c5ca0df0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6d77aa62.css",
+    "static/js/main.5a0e3a19.js"
+  ]
+}
