@@ -1,0 +1,391 @@
+.AlertParent {
+    top: 0;
+    position: fixed;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden !important;
+    backdrop-filter: blur(10px);
+    transition: .3s;
+}
+
+.alertSmall {
+    position: fixed;
+    bottom: 15px;
+    right: 25px;
+    min-height: 120px;
+    height: fit-content;
+    width: 520px;
+    border-radius: 12px;
+    /* background-color: rgba(0, 0, 0, 0.235); */
+    background: none;
+    /* box-shadow: 2px 2px 5px gray; */
+    overflow: hidden;
+    z-index: 9999;
+    display: flex;
+
+}
+
+.AlertComponent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    padding: 20px;
+    background-color: white;
+}
+
+
+.innerAlert {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    min-height: 220px;
+    height: fit-content;
+
+}
+
+.innerAlert>p {
+    color: gray;
+}
+
+.innerAlert>h2 {
+    color: rgb(114, 114, 114);
+}
+
+.NavBar {
+	position: fixed;
+	top: 20px;
+	background-color: rgb(255, 255, 255);
+	-webkit-backdrop-filter: blur(50px);
+	backdrop-filter: blur(50px);
+	min-height: 50px;
+	/* height: -moz-fit-content; */
+	height: -moz-fit-content;
+	height: fit-content;
+	border-radius: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 999;
+	/* box-shadow: 1px 1px 3px gray; */
+}
+.NavBar>button {
+    height: 35px;
+    margin: 0 10px;
+    width: 110px;
+    box-shadow: none;
+    transition: .3s;
+    padding: 5px 8px !important;
+    text-align: center;
+    font-size: 12px;
+
+}
+
+.NavBar>button:hover {
+    background-color: rgba(169, 83, 83, 0.483);
+    color: rgb(243, 243, 243);
+}
+
+.leftSideAlert {
+    background-color: rgb(244, 244, 244);
+    min-height: 120px !important;
+    height: fit-content;
+    padding: 15px ;
+}
+    
+.blurSideAlert {
+    background-color: rgba(108, 0, 0, 0.29);
+    backdrop-filter: blur(15px);
+    min-height: 120px !important;
+    height: fit-content !important;
+}
+
+.headLeft>h3 {
+    margin-top: -23px;
+    margin-left: 5px;
+}
+
+.navBarTail {
+    background-color: rgba(216, 216, 216, 0);
+    min-height: 500px;
+    height: fit-content;
+    position: fixed;
+    top: 50px;
+    transition: .2s;
+    border-radius: 15px !important;
+    overflow: hidden !important;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    display: flex;
+    /* overflow: hidden; */
+    /* padding: 15px; */
+}
+
+.navBarTailDeactive {
+    /* transition: .2s; */
+    height: 0px !important;
+    min-height: 0px;
+    /* overflow: hidden; */
+
+    z-index: -1 !important;
+    opacity: 0;
+}
+
+.rightNavTail {
+	background-color: rgba(115, 0, 0, 0.23);
+	-webkit-backdrop-filter: blur(15px);
+	backdrop-filter: blur(15px);
+	height: 500px !important;
+	display: flex;
+	justify-content: center;
+	align-items: start;
+    padding: 10px;
+    border-bottom-right-radius: 15px;
+}
+.leftNavTail {
+	background-color: rgb(255, 255, 255);
+	-webkit-backdrop-filter: blur(15px);
+	backdrop-filter: blur(15px);
+	padding: 25px !important;
+	height: 500px !important;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-bottom-left-radius: 15px;
+	align-items: start;
+}
+.productContaiter {
+	padding-top: 190px;
+	padding-bottom: 190px;
+	background-image: none;
+	background: #f9f9f9 !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* flex-direction: column; */
+}
+
+.productParent {
+	background-color: rgb(255, 255, 255);
+	box-shadow: 2px 2px 5px #939393;
+	min-height: 546px;
+	height: -moz-fit-content;
+	height: fit-content;
+	border-radius: 12px;
+	margin-bottom: 50px;
+	width: 300px !important;
+	margin: 7px;
+	margin-top: 50px;
+	padding: 20px;
+}
+
+img {
+    border-radius: 12px;
+
+
+}
+
+.price {
+    color: rgb( 131, 10, 10);
+
+}
+
+
+
+.leftSideAlert > p {
+    margin-left: 25px;
+    margin-right: 25px;
+
+}
+.activeClass {
+    transition: .3s !important;
+}
+.circleLoading {
+    border-radius: 50px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 10px;
+    /* background-color: #750d0da6; */
+    color: rgb(244, 244, 244);
+    /* box-shadow: 2px 2px 5px rgb(87, 87, 87);} */
+    width: 100px !important;
+    height: 100px !important;
+}
+.circleLoading >div > p {
+    
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(227, 227, 227);
+    margin: 0px !important;
+    position: sticky;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    /* margin-left: -50% !important; */
+    left: -50%;
+}
+
+.navMenu {
+    height: 38px !important;
+    box-shadow: none;
+    font-size: 20px !important;
+    color: rgb(146, 35, 35);
+}
+
+.navMenu:hover {
+    scale: .9;
+    box-shadow: 1px 1px 3px rgb(86, 86, 86) !important;
+
+}
+
+.navMenu:active {
+    color:  rgb(200, 200, 200);
+}
+
+
+
+
+.rightNavTail > div {
+    height: 50px !important;
+}
+
+
+.articleContainer {
+    min-height: 881px;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    background-color: white;
+    border-radius: 12px;
+    margin: 100px;
+}
+.imgCont {
+    width: 500px !important;
+    height: 666px !important;
+    border-radius: 12px;
+    background-color: rgb(168, 0, 0);
+}
+
+
+.myArticle {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+    height: 700px !important;
+    width: 500px !important;
+}
+
+.indexContainer {
+    border-radius: 12px;
+    background-color: #ddd;
+    width: 105px;
+    padding: 5px;
+    height: 20px;
+    display: flex;
+    justify-content: start;
+    text-align: center;
+}
+.indexViewActive {
+    width: 10px;
+    height: 10px;
+    border-radius: 30px;
+    margin-left: 5px;
+    background-color: #a80000;
+}
+.indexViewDeactive {
+    width: 10px;
+    height: 10px;
+    border-radius: 30px;
+    margin-left: 5px;
+    background-color: #939393;
+}
+
+
+.disNone {
+    opacity: 0 !important;
+    transition: .3s !important;
+    /* width: 0px !important; */
+    /* height: 0px !important  ; */
+}
+
+
+.sliderH {
+    margin-top: 10px;
+
+}
+
+.settingContainer {
+    min-height: 500px;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    background: white;
+    padding: 100px 0px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 42px rgb(170 170 170);
+}
+
+.settingContainer >div> button   {
+    margin: 10px;
+
+}
+.sliderSettingsCont {
+    padding: 10px   ;
+}
+
+
+.sliderSettingsCont >textarea {
+border: none ;
+margin: 10px;
+box-shadow: 2px 2px 8px rgb(210, 210, 210);
+} 
+.sliderSettingsCont > input {
+    margin: 5px;
+    border: none;
+
+    box-shadow: 2px 2px 8px rgb(210, 210, 210);
+}
+.sliderSettingsCont > div {
+    margin-top: 20px;
+}
+
+.sliderSettingsParent {
+    margin-top: 30px;
+    width: 550px !important;
+}
+
+.imgCont  > img {
+    height: 100% !important;
+    width: 100% !important;
+}
+.sliderOptionCont > button {
+    width: fit-content !important;
+    margin: 10px;
+}
+.sliderRepresentor {
+    /* scale: .5; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* backdrop-filter: blur(15px); */
+    
+}
+
+.settingOptCont {
+    margin-bottom: 25px;
+}
+
+.marginalBox {
+    margin: 120px 0px;
+    height: 100px;
+}
+
+.rightNavTail > button {
+    margin: 5px;
+}
+

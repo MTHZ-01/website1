@@ -1,0 +1,93 @@
+
+
+.useAnimation { 
+	/* background: radial-gradient(circle at -16% -16%, rgb(255, 255, 255), rgb(105, 5, 5)); */
+	/* display: grid; */
+	/* height: 100vh; */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    /* backdrop-filter: blur(15px) !important; */
+	/* place-items: center;  */
+}
+
+.useAnimation::before {
+	animation: anim 5s infinite;
+	/* background: radial-gradient(circle at 0% 0%, rgb(255, 255, 255), rgb(173, 11, 11)); */
+	border-radius: 30% 70% 53% 47% / 26% 46% 54% 74%;
+	box-shadow: 0 -2vmin 4vmin rgba(176, 0, 26, 0.407) inset, 0 1vmin 4vmin rgb(216, 112, 112) inset,
+		0 -2vmin 7vmin rgba(255, 0, 0, 0.224) inset;
+	content: "";
+	filter: drop-shadow(0 0 3vmin rgba(255, 255, 255, 0.193)) drop-shadow(0 5vmin 4vmin rgb(218, 112, 112))
+		drop-shadow(2vmin -2vmin 15vmin rgba(255, 255, 255, 0.6))
+		drop-shadow(0 0 7vmin rgba(0, 0, 0, 0));
+	height: 20vmin;
+	width: 20vmin;
+}
+
+@keyframes anim {
+	0%,
+	100% {
+        backdrop-filter: blur(4px);
+		border-radius: 30% 70% 70% 30% / 30% 52% 48% 70%;
+		box-shadow: 0 -2vmin 4vmin rgba(152, 3, 25, 0.525) inset, 0 -4vmin 4vmin rgb(230, 110, 110) inset,
+			0 -2vmin 7vmin rgba(128, 0, 0, 0.566) inset;
+	}
+
+	10% {
+        backdrop-filter: blur(4px);
+		border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%;
+	}
+
+	20% {
+        backdrop-filter: blur(4px);
+		border-radius: 67% 33% 47% 53% / 37% 20% 80% 63%;
+	}
+
+	30% {
+        backdrop-filter: blur(4px);
+		border-radius: 39% 61% 47% 53% / 37% 40% 60% 63%;
+		box-shadow: 0 -4vmin 8vmin rgba(160, 0, 0, 0.671) inset, -1vmin -2vmin 6vmin rgb(255, 182, 182) inset,
+			-1vmin -2vmin 4vmin rgb(252, 246, 246) inset, 1vmin 4vmin 8vmin rgb(128, 0, 0) inset;
+	}
+
+	40% {
+        backdrop-filter: blur(4px);
+		border-radius: 39% 61% 82% 18% / 74% 40% 60% 26%;
+	}
+
+	50% {
+        backdrop-filter: blur(4px);
+		border-radius: 100%;
+		box-shadow: 0 4vmin 16vmin rgba(219, 219, 219, 0) inset, 0 2vmin 5vmin rgb(255, 0, 38) inset, 0 4vmin 4vmin rgb(222, 0, 0) inset,
+			0 6vmin 8vmin rgba(171, 0, 0, 0) inset;
+	}
+
+	60% {
+        backdrop-filter: blur(4px);
+		border-radius: 50% 50% 53% 47% / 72% 69% 31% 28%;
+	}
+
+	70% {
+        backdrop-filter: blur(4px);
+		border-radius: 50% 50% 53% 47% / 26% 22% 78% 74%;
+		box-shadow: 1vmin 1vmin 8vmin rgba(243, 243, 243, 0.524) inset,
+			2vmin -1vmin 4vmin rgba(170, 0, 0, 0.705) inset, -1vmin -1vmin 16vmin rgb(128, 0, 0) inset;
+	}
+
+	80% {
+        backdrop-filter: blur(4px);
+		border-radius: 50% 50% 53% 47% / 26% 69% 31% 74%;
+	}
+
+	90% {
+        backdrop-filter: blur(4px);
+		border-radius: 20% 80% 20% 80% / 20% 80% 20% 80%;
+	}
+}
+
+.circleLoading > p {
+
+    width: 500px !important;
+    z-index: 55 ;
+}
