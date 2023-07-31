@@ -72,7 +72,7 @@ class NavBar extends Component {
               {(this.data.menuTitle == "Settings") &&
                 <Fragment>
                   <button onClick={() => {this.props.history.push("/Settings/SliderSettings")}}>Slider settings</button>
-                  <button> Second option</button>
+                  <button> Products </button>
                 </Fragment>}
               {/* <Loading /> */}
 

@@ -32,6 +32,7 @@ export default class AddProduct extends Component {
 
                             <input className='ml-2 addProductTitle col-12' required type="text" placeholder='Type here the title' onChange={this.props.handleTitleChange} />
                             <input className=' addProductPrice col-12' type="text" required placeholder='Enter the price here' onChange={this.props.handlePriceChange} />
+                            
                         </div>
                         <div className='col-12 d-flex justify-content-center  prodButtonCont'>
                             <button  onClick={this.Submit}>Add product</button>

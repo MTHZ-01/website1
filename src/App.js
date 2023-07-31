@@ -75,6 +75,21 @@ class App extends Component {
 
 
 
+  handleDeleteProduct = (index,id) => {
+    const cloneState = {...this.state}
+    cloneState.Products.splice(index , 1)
+    this.setState(cloneState)
+    
+    fetch(`http://192.168.1.192:8000/Products/${id}`, {
+      method: 'DELETE',
+
+    })
+    .then((updatedData) => {
+      console.log("success")
+    })
+    
+  }
+
 
 
   uploadSlider = (updatedData) => {
@@ -480,6 +495,7 @@ class App extends Component {
                     this.state.Products.map((product) => (<Products data={product} key={product.id} />))
 
                   }
+
                 </div>
 
 
@@ -521,7 +537,7 @@ class App extends Component {
 
             <Route path="/Settings/">
               <div className='middleSection productContaiter center'>
-                <Settings setter={this.handleSliderDataSetting} data={this.state} />
+                <Settings data={this.state} setter={this.handleSliderDataSetting} delProd={this.handleDeleteProduct} />
               </div>
             </Route>
 

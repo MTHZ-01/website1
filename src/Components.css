@@ -322,12 +322,16 @@ img {
 
 .settingContainer {
     min-height: 500px;
+    overflow: hidden;
     height: -moz-fit-content !important;
     height: fit-content !important;
     background: white;
     padding: 100px 0px;
     border-radius: 12px;
-    box-shadow: 2px 2px 42px rgb(170 170 170);
+    box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+    
 }
 
 .settingContainer >div> button   {
@@ -389,3 +393,48 @@ box-shadow: 2px 2px 8px rgb(210, 210, 210);
     margin: 5px;
 }
 
+
+
+.prodEditCont {
+    background-color: white;
+    min-height: 400px;
+    height: fit-content;
+    width: 250px !important;
+    box-shadow: 2px 2px 5px rgb(196, 196, 196);
+    border-radius: 12px;
+    margin: 5px;
+
+}
+
+.ProductEditableContParent {
+    margin-top: 40px;
+
+    
+}
+
+.imgforProd{
+     width: 100%;
+     height: 200px !important;
+}
+
+.h-fix {
+    height: fit-content !important;
+}
+.prodButtCont > button {
+    width: 150px;
+    margin: 2.5px;
+    color: white;
+}
+
+.editButton > button {
+    background-color: rgb(255, 94, 0);
+}
+
+.delButton > button {
+    background-color: rgb(184, 0, 0);
+    
+}
+.viewButton > button {
+    
+    background-color: rgb(0, 77, 184);
+}
