@@ -74,13 +74,7 @@ class App extends Component {
   }
 
 
-  getCsrf = () => {
-    fetch("http://127.0.0.1:8000/polls/GetCsrf")
-      .then((res) => res.json())
-      .then((data) =>
-        this.setState({ csrf: data })
-      )
-  }
+
 
   getAnnouncement = () => {
 
@@ -168,7 +162,7 @@ class App extends Component {
     if (this.state.Slider == null) {
 
       const clone_State = { ...this.state }
-      fetch(`http://${this.ip}:8000/Slider`)
+      fetch(`http://127.0.0.1:8000/polls/Slider`)
         .then(response => response.json())
         .then((data) => {
 
@@ -400,7 +394,7 @@ class App extends Component {
   componentDidMount() {
 
     this.getAnnouncement()
-    this.getCsrf()
+
     
     fetch(`http://127.0.0.1:8000/polls/getProd`)
       .then(response => response.json())

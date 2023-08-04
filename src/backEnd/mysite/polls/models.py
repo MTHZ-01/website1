@@ -31,8 +31,23 @@ class SmallLinkAnnouncement(models.Model):
 
 
 class Slider(models.Model):
-    picSrc = models.ImageField(upload_to='images')
-    title = models.CharField(max_length=100)
-    description = models.TextField(max_length=100)
+    picSrc1 = models.ImageField(upload_to='')
+    picSrc2 = models.ImageField(upload_to='')
+    picSrc3 = models.ImageField(upload_to='')
+    picSrc4 = models.ImageField(upload_to='')
+    picSrc5 = models.ImageField(upload_to='')
+    picSrc6 = models.ImageField(upload_to='')
+    title1 = models.CharField(max_length=100)
+    title2 = models.CharField(max_length=100)
+    title3 = models.CharField(max_length=100)
+    title4 = models.CharField(max_length=100)
+    title5 = models.CharField(max_length=100)
+    title6 = models.CharField(max_length=100)
+    description1 = models.TextField(max_length=100)
+    description2 = models.TextField(max_length=100)
+    description3 = models.TextField(max_length=100)
+    description4 = models.TextField(max_length=100)
+    description5 = models.TextField(max_length=100)
+    description6 = models.TextField(max_length=100)
 
 

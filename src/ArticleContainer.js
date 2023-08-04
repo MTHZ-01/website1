@@ -25,8 +25,9 @@ export default class ArticleContainer extends Component {
                 <div className='myArticle'>
 
 
-                    { [0, 1, 2, 3, 4, 5].map(index =>
 
+                    { [0, 1, 2, 3, 4, 5].map(index =>
+                        
                         <ArticleFront
                             widthClass={this.data.Slider.imgClassNames[index]}
                             imgSrc={this.data.Slider.SliderPicSrcs[index]}
@@ -34,8 +35,6 @@ export default class ArticleContainer extends Component {
                             message={this.data.Slider.descriptions[index]}
                             key={index}
                         />
-
-
                     )}
                 </div>
 

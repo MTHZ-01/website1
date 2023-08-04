@@ -76,9 +76,55 @@ def getSMLAnnounce(request):
 def SliderData(request):
     actual = Slider.objects.all()[0]    
     serData = {
-        "imageUrl": request.build_absolute_uri(actual.picSrc),
-        "title": actual.title,
-        "description": actual.description
+        "SliderPicSrcs" : [
+        request.build_absolute_uri(actual.picSrc1.url),
+        request.build_absolute_uri(actual.picSrc2.url),
+        request.build_absolute_uri(actual.picSrc3.url),
+        request.build_absolute_uri(actual.picSrc4.url),
+        request.build_absolute_uri(actual.picSrc5.url),
+        request.build_absolute_uri(actual.picSrc6.url)
+        ],
+
+
+        "currentIndex": 0,
+    "activeClassName_img": "",
+    "deactiveClassName_img": " disNone",
+    "activeClassName_index": "indexViewActive",
+    "deactiveClassName_index": "indexViewDeactive",
+    "imgClassNames": [
+      " disNone",
+      " disNone",
+      " disNone",
+      "disNone",
+      " disNone",
+      " disNone"
+    ],
+    "indexPointsClasses": [
+      "indexViewDeactive",
+      "indexViewDeactive",
+      "indexViewDeactive",
+      "indexViewDeactive",
+      "indexViewDeactive",
+      "indexViewDeactive"
+    ],
+    "titles": [
+    actual.title1,
+    actual.title2,
+    actual.title3,
+    actual.title4,
+    actual.title5,
+    actual.title6
+    ],
+    "descriptions": [
+      actual.description1,
+      actual.description2,
+      actual.description3,
+      actual.description4,
+      actual.description5,
+      actual.description6
+
+    ]
+    
     }
 
 

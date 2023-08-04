@@ -7,5 +7,5 @@ urlpatterns = [
     path("index", views.index, name="index"),
     path("getProd", views.get_all_products, name="GetProds"),
     path("GetAnnounce", views.getSMLAnnounce, name="GetAnnounce"),
-    path("Slider", views.SliderData, name="GetCsrf"),
+    path("Slider", views.SliderData, name=""),
 ]
