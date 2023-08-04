@@ -29,7 +29,7 @@ class App extends Component {
   constructor() {
     super()
     setInterval(this.handlePictureindexChange, 2000)
-
+    
 
 
     this.state = {
@@ -40,7 +40,7 @@ class App extends Component {
       AddProd: {
         title: "",
         price: "",
-        imgSrc: "",
+        PicSrc: ["",""],
         id: uuidv4()
 
 
@@ -60,9 +60,12 @@ class App extends Component {
 
       Products: [],
 
-      Slider: null
-    }
+      Slider: null,
 
+      SmallLink: null,
+
+      csrf: null
+    }
 
 
 
@@ -71,23 +74,51 @@ class App extends Component {
   }
 
 
+  getCsrf = () => {
+    fetch("http://127.0.0.1:8000/polls/GetCsrf")
+      .then((res) => res.json())
+      .then((data) =>
+        this.setState({ csrf: data })
+      )
+  }
+
+  getAnnouncement = () => {
+
+    fetch("http://127.0.0.1:8000/polls/GetAnnounce")
+      .then(response => response.json())
+      .then((data) => {
+
+        // console.log(data)
+        const serSMLA = {
+          img: data.AnnounceImage,
+          title: data.title
+        }
 
 
+        this.setState({ SmallLink: serSMLA })
+
+      }
+      )
+  }
 
 
-  handleDeleteProduct = (index,id) => {
-    const cloneState = {...this.state}
-    cloneState.Products.splice(index , 1)
+  handleDeleteProduct = (index, id) => {
+    const cloneState = { ...this.state }
+    cloneState.Products.splice(index, 1)
     this.setState(cloneState)
-    
-    fetch(`http://192.168.1.192:8000/Products/${id}`, {
-      method: 'DELETE',
 
+
+
+
+
+    fetch(`http://127.0.0.1:8000/polls/getProd`, {
+      method: 'DELETE',
+      body:id
     })
-    .then((updatedData) => {
-      console.log("success")
-    })
-    
+      .then((updatedData) => {
+        console.log("success")
+      })
+
   }
 
 
@@ -140,23 +171,21 @@ class App extends Component {
       fetch(`http://${this.ip}:8000/Slider`)
         .then(response => response.json())
         .then((data) => {
-          console.log()
-          console.log("From local api:", data)
-          console.log()
-          const cloneState = {...this.state}
-          cloneState.Slider = data
-          this.setState(cloneState)
-          
-          
-          
+
+
+
+          this.setState({Slider : data})
+
+
+
         })
         .then(() => {
           console.log("Slider from local state", this.state.Slider)
           // this.setState(this.state)
           this.forceUpdate()
-  
+
         })
-        
+
     }
 
     // console.log(this.state.Slider)
@@ -202,27 +231,56 @@ class App extends Component {
   }
 
 
+  getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        // Does this cookie string begin with the name we want?
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+
+
   // Handling add product:
   handleAddProduct = () => {
-    const data = {
+    const csrftoken = this.getCookie('csrftoken');
+
+    const formData = new FormData()
+    formData.append("title", this.state.AddProd.title)
+    formData.append("price", this.state.AddProd.price)
+    formData.append("description", "")
+    formData.append("PicSrc", this.state.AddProd.PicSrc[1])
+    formData.append("id", this.state.AddProd.id)
+
+    var data = {
       title: this.state.AddProd.title,
       price: this.state.AddProd.price,
-      PicSrc: this.state.AddProd.imgSrc,
+      description: "",
+      PicSrc: this.state.AddProd.PicSrc[1],
+      // publishDate: "2023-08-02 12:09:34",
       id: this.state.AddProd.id,
     }
+    for (const entry of formData.entries()) {
+      console.log(entry);
+    }
 
-    console.log(data)
+    // console.log(data)
     if (data.price == "" || data.title === "" || data.PicSrc === "") {
       this.handlePopUpAlert("Complete all fields", "Please compelete all the required fields.")
       return
     }
 
-    fetch(`http://${this.ip}:8000/products`, {
+    fetch(`http://127.0.0.1:8000/polls/getProd`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
+      body: formData
+
     })
       .then(response => response.json())
       .then(data => {
@@ -259,8 +317,8 @@ class App extends Component {
   // Handling img src Change:
   handleImageChange = (e) => {
     var clone_State = { ...this.state }
-    var s = clone_State.AddProd.imgSrc
-    console.log(clone_State)
+    var s = clone_State.AddProd.PicSrc
+
     e.preventDefault();
     let reader = new FileReader();
     let file = e.target.files[0];
@@ -268,7 +326,8 @@ class App extends Component {
 
     reader.addEventListener("load", async () => {
 
-      clone_State.AddProd.imgSrc = reader.result
+      console.log(file)
+      clone_State.AddProd.PicSrc = [reader.result,file,]
       console.log("Image read success")
       this.setState(clone_State)
 
@@ -340,7 +399,10 @@ class App extends Component {
 
   componentDidMount() {
 
-    fetch(`http://192.168.1.192:8000/products`)
+    this.getAnnouncement()
+    this.getCsrf()
+    
+    fetch(`http://127.0.0.1:8000/polls/getProd`)
       .then(response => response.json())
       .then((data) => {
 
@@ -466,14 +528,14 @@ class App extends Component {
                   </div>
                 </div>
                 <div className="col-6 d-flex justify-content-center align-items-center align-items-md-start flex-column ">
-                  <SmallLinkAnnouncement />
+                  {(this.state.SmallLink != null) && <SmallLinkAnnouncement data={this.state.SmallLink} />}
                 </div>
               </div>
 
               <div className='middleSection d-flex justify-content-center align-items-center flex-column'>
 
                 {(this.state.Slider != null) && <ArticleContainer data={this.state} changeIndex={this.handlePictureindexChange} getState={this.handleSliderStateRevive} />}
-                
+
                 <StageOneMain />
               </div>
               {/* <button onClick={() => this.handleBigAPopUp(0)}></button> */}

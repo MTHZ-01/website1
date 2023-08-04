@@ -27,7 +27,7 @@ export default class AddProduct extends Component {
                         <div>
                             <FloatingFileInput srcChange={this.props.srcChange} />
                             <div className='imgContainer'>
-                                <img src={this.s.imgSrc} alt="" className='col-12 h-100' />
+                                <img src={this.s.PicSrc[0]} alt="" className='col-12 h-100' />
                             </div>
 
                             <input className='ml-2 addProductTitle col-12' required type="text" placeholder='Type here the title' onChange={this.props.handleTitleChange} />

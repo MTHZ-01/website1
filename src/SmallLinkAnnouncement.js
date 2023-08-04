@@ -5,16 +5,22 @@
 import React, { Component } from 'react'
 
 export default class SmallLinkAnnouncement extends Component {
+
+
+
+    data = this.props.data
     render() {
         return (
             <div className='AnnounceParent col-7 AnnounceParentExtention'>
                 <div className="imgContainer col-12 ">
-                    <img src="" alt="" />
+                    {/* {console.log("imgSrc:",  this.props.imgSrc)} */}
+                    <img src={this.data.img} alt="" />
+                    {/* <img src="./images/Wallpaper_4K3D_13160.JPG" alt="" /> */}
                 </div>
                 <div className='col-12 center '>
                     <div className="borderDiv" />
                 </div>
-                <h2> Abstract application development</h2>
+                <h2> {this.data.title}</h2>
 
                 <div className='col-12 center '>
                     <div className="borderDiv" />

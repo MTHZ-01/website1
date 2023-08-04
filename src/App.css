@@ -131,8 +131,9 @@ footer {
   border-top: 2px solid gray;
   height: 500px;
   /* margin-top: 120px; */
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
-  background: #191919;
+  background: #ffffff;
   bottom: 0px;
 }
 
@@ -271,4 +272,15 @@ img {
   height: 15px !important;
   width: 15px !important;
   padding: 0px !important;
+}
+
+
+.imgContainer > img {
+ 
+    width: 100%;
+    background: white;
+    /* border: none; */
+    height: 100%;
+    /* border: 2px solid white; */
+
 }
